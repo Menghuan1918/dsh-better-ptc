@@ -1,0 +1,7 @@
+# Singleton host row: one PTC runtime wrapper and one betterPtc service per
+# profile. The ask-user and subagent bundles insert this same stable row; the
+# Loader deduplicates by row id, so installing both plugins cannot double-wrap
+# the runtime.
+- insert:
+    - id: dsh-better-ptc
+      name: dsh-better-ptc
