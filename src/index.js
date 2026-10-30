@@ -26,7 +26,7 @@ function deadlineMessage(timeoutMs) {
 
 /** Copy one binding namespace, pausing the deadline around registered tools. */
 function wrapNamespace(namespace, names, pause, resume) {
-  const functions = {}
+  const functions = Object.create(null)
   for (const [toolName, fn] of Object.entries(namespace.functions ?? {})) {
     functions[toolName] = names.has(toolName)
       ? async (args) => {
